@@ -72,7 +72,7 @@ labels = np.array(labels)
 
 # Develop a sequential model using tensorflow keras
 model = keras.Sequential([
-    keras.layers.Flatten(input_shape=(64,64,3)),
+    keras.layers.Flatten(input_shape=(256,256,3)),
     keras.layers.Dense(128, activation=tf.nn.tanh),
     keras.layers.Dense(5, activation=tf.nn.softmax)
 ])
@@ -83,7 +83,7 @@ model.compile(optimizer=Adam(learning_rate=0.001),
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-model.fit(train,labels, epochs=5)
+model.fit(train,labels, epochs=20)
 
 export_path = 'flowers-model/1/'
 tf.saved_model.save(model, os.path.join('./',export_path))
