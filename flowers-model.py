@@ -29,7 +29,7 @@ image_names = []
 train_labels = []
 train_images = []
 
-size = 64,64
+size = 256,256
 print('folders')
 folders.remove("LICENSE.txt")
 print(folders)
